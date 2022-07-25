@@ -12,15 +12,19 @@
     
 
     <div id="toDoList">
-
-        <H1>To-do list</H1>
-        <p>Aggiungi, deseleziona ed alimina le cose da fare...</p>
-
-        <input type="text" v-model="newToDo">
-        <button @click="toDoAdd">Aggiungi To-Do</button>
+        <div class="text">
+            <H1>To-do list</H1>
+            <p>Aggiungi, deseleziona ed elimina le cose da fare...</p>
+        </div>
+        
+        <div class="inputBox">
+            <input type="text" v-model="newToDo" v-on:keyup.enter="toDoAdd" placeholder="Ex. Andare a correre">
+            <button  @click="toDoAdd">Aggiungi To-Do</button>
+        </div>
+        
         
         <ul>
-            <li v-for="(todo, index) in toDo"><span @click="selectDeselect(index)"  :class="{'barred': done}">{{todo}}</span> <span @click="toDoDelete(index)">DEL</span></li>
+            <li v-for="(todo, index) in toDo"><span @click="selectDeselect(index)"  :class="{'barred': done}">{{todo}}</span> <span class="del" @click="toDoDelete(index)">Elimina</span></li>
         </ul>
 
     </div>

@@ -6,8 +6,55 @@
 
 #toDoList{
     text-align: center;
+    margin: 50px auto;
+    width: 30%;
+    background-color: #333;
+    padding: 10px 50px 50px 50px;
+    border-radius: 20px;
+}
+
+.text{
+    margin: 20px 0px;
+    color: #fff;
 }
 
 .barred{
     text-decoration: line-through;
+}
+
+.del{
+    color: red;
+}
+
+li span, button{
+    cursor: pointer;
+}
+
+.inputBox, li{
+    display: flex;
+    justify-content: space-between;
+}
+
+input{
+    border: none;
+    border-bottom: 2px solid #ddd;
+    outline: none;
+    width: 75%;
+    background-color: transparent;
+    color: white;
+}
+
+button{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: green;
+    color: #fff;
+    border: none;
+}
+
+li{
+    margin: 10px 0px;
+    padding: 8px;
+    background-color: #ddd;
+    border-radius: 5px;
 }
