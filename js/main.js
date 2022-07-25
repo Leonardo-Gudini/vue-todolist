@@ -6,16 +6,30 @@ var toDoList = new Vue({
             "Fare la spesa",
             "Studiare Vue.js",
             "Avviare la Start-Up"
-        ]
+        ],
+        done: false
     },
     methods:{
         toDoDelete(index){
-            console.log(index)
             this.toDo.splice(index, 1);
         },
 
         toDoAdd(){
-            this.toDo.push(this.newToDo);
+            if(this.newToDo == ""){
+                alert(`Attenzione, scrivi una 'To-Do' per aggiungerla alla lista!`);
+            }else{
+                this.toDo.push(this.newToDo);
+                this.newToDo="";
+            }
+        },
+
+        selectDeselect(index){
+            console.log(index);
+            if(this.done==false){
+                this.done = true;
+            }else{
+                this.done = false;
+            }
         }
     }
 })

@@ -7,3 +7,7 @@
 #toDoList{
     text-align: center;
 }
+
+.barred{
+    text-decoration: line-through;
+}
