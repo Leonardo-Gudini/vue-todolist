@@ -9,8 +9,13 @@ var toDoList = new Vue({
         ]
     },
     methods:{
-        toDoDelete(){
-            toDo.splice(0,1)
+        toDoDelete(index){
+            console.log(index)
+            this.toDo.splice(index, 1);
         },
+
+        toDoAdd(){
+            this.toDo.push(this.newToDo);
+        }
     }
 })

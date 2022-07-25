@@ -18,10 +18,10 @@
 
         <input type="text" v-model="newToDo">
 
-        <button>Aggiungi To-Do</button>
+        <button @click="toDoAdd">Aggiungi To-Do</button>
 
         <ul>
-            <li v-for="(todo, index) in toDo">{{todo}} <span @click="toDoDelete">DEL</span></li>
+            <li v-for="(todo, index) in toDo">{{todo}} <span @click="toDoDelete(index)">DEL</span></li>
         </ul>
     </div>
     
