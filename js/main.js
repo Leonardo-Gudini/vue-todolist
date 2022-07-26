@@ -3,11 +3,19 @@ var toDoList = new Vue({
     data: {
         newToDo:"",
         toDo:[
-            "Fare la spesa",
-            "Studiare Vue.js",
-            "Avviare la Start-Up"
+            {
+                "text": "Fare la spesa",
+                "done": false
+            },
+            {
+                "text": "Studiare Vue.js",
+                "done": false
+            },
+            {
+                "text": "Avviare la Start-Up",
+                "done": false
+            }
         ],
-        done: false
     },
     methods:{
         toDoDelete(index){
@@ -15,21 +23,27 @@ var toDoList = new Vue({
         },
 
         toDoAdd(){
+
+            const toDo ={
+                "text": this.newToDo,
+                "done": false
+            }
+
             if(this.newToDo == ""){
                 alert(`Attenzione, scrivi una 'To-Do' per aggiungerla alla lista!`);
             }else{
-                this.toDo.push(this.newToDo);
+                this.toDo.push(toDo);
                 this.newToDo="";
             }
         },
 
         selectDeselect(index){
             console.log(index);
-            if(this.done==false){
-                this.done = true;
+            if(this.toDo[index].done === false){
+                this.toDo[index].done = true;
             }else{
-                this.done = false;
+                this.toDo[index].done = false;
             }
         }
     }
-})
+});
